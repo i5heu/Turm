@@ -1,0 +1,12 @@
+name = "Turm"
+license = "AGLP-3.0"
+licenselink = "https://github.com/i5heu/Turm/blob/master/LICENSE"
+description = "A simple thin Hugo Template!"
+homepage = "https://github.com/i5heu/Turm"
+tags = ["blog"]
+features = ["blog"]
+min_version = "0.57.2"
+
+[author]
+  name = "Marvin Heidenstedt"
+  homepage = "https://heidenstedt.org"

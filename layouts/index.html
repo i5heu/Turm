@@ -1,0 +1,12 @@
+{{ partial "header.html" . }}
+<main>
+    <ul>
+      {{ range .Site.RegularPages.ByPublishDate.Reverse }}
+	<li>
+          <time>{{ .Date.Format (.Site.Params.dateform) }}</time><br>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+	</li>
+      {{ end }}
+    </ul>
+ </main>
+{{ partial "footer.html" . }}

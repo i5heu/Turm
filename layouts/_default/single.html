@@ -1,0 +1,13 @@
+{{ partial "header.html" . }}
+
+<main>
+    <h1>{{ .Title }}</h1>
+    <div>
+        {{ .Date.Format (.Site.Params.dateform) }}
+    </div>
+    <div>
+        {{ .Content }}
+    </div>
+</main>
+
+{{ partial "footer.html" . }}
