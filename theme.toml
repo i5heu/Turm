@@ -5,7 +5,7 @@ description = "A simple thin Hugo Template!"
 homepage = "https://github.com/i5heu/Turm"
 tags = ["blog"]
 features = ["blog"]
-min_version = "0.57.2"
+min_version = "0.54.0"
 
 [author]
   name = "Marvin Heidenstedt"

@@ -3,7 +3,7 @@
     <ul>
       {{ range .Site.RegularPages.ByPublishDate.Reverse }}
 	<li>
-          <time>{{ .Date.Format (.Site.Params.dateform) }}</time><br>
+	  <time datetime="{{ .Date.Format "02-01-2006" }}">{{ .Date.Format (.Site.Params.dateform | default "01-02-2006") }}</time>
           <a href="{{ .Permalink }}">{{ .Title }}</a>
 	</li>
       {{ end }}
