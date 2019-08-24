@@ -1,1 +1,18 @@
---------- LIST ----------
+{{ partial "header.html" . }}
+
+<h1>{{ .Title }}</h1>
+<div>
+    <ul>
+        {{ range $el := .Paginator.Pages }}
+        <li>
+            <a href="{{ .RelPermalink }}">
+                {{ $el.Title | markdownify }}
+            </a>
+             || 
+            {{ $el.Date.Format (.Site.Params.dateformPost | default "02.01.2006") }}
+        </li>
+        {{ end }}
+    </ul>
+</div>
+
+{{ partial "footer.html" . }}

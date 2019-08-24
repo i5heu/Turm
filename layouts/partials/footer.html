@@ -1,5 +1,15 @@
-    </body>
-    <footer>
-	HOLLA
-    </footer>
+</main>
+<footer>
+    {{/* Display links if available */}}
+    {{ if .Site.Menus.footer }}
+
+    {{- range .Site.Menus.footer -}}
+    <a href="{{ .URL }}">{{- .Name -}}</a>
+    {{ end }}
+
+    {{ end }}
+</footer>
+
+</body>
+
 </html>

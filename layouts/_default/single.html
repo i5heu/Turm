@@ -1,13 +1,24 @@
 {{ partial "header.html" . }}
 
+<section class="categories">
+    {{ range .Params.categories }}
+    {{ $href := print (absURL "categories/") (urlize .) }}
+    <a href="{{ $href }}">{{ . }}</a>
+    {{ end }}
+</section>
+<h1>{{ .Title }}</h1>
+<section>
+  <time
+    datetime="{{ .Date.Format "02-01-2006" }}">{{ .Date.Format (.Site.Params.dateform | default "15:04 MST 02-01-2006") }}</time>
+</section>
 <main>
-    <h1>{{ .Title }}</h1>
-    <div>
-      <time datetime="{{ .Date.Format "02-01-2006" }}">{{ .Date.Format (.Site.Params.dateform | default "01-02-2006") }}</time>
-    </div>
-    <div>
-        {{ .Content }}
-    </div>
+  {{ .Content }}
 </main>
+<section class="tags">
+    {{ range .Params.tags }}
+    {{ $href := print (absURL "tags/") (urlize .) }}
+    <a href="{{ $href }}">{{ . }}</a>
+    {{ end }}
+</section>
 
 {{ partial "footer.html" . }}

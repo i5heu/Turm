@@ -1,12 +1,20 @@
 {{ partial "header.html" . }}
 <main>
-    <ul>
-      {{ range .Site.RegularPages.ByPublishDate.Reverse }}
-	<li>
-	  <time datetime="{{ .Date.Format "02-01-2006" }}">{{ .Date.Format (.Site.Params.dateform | default "01-02-2006") }}</time>
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-	</li>
-      {{ end }}
-    </ul>
- </main>
+  {{.Content}}
+</main>
+<section class="lastBlogPosts">
+  {{ range first 5 ( where .Data.Pages "Section" "posts") }}
+  <a href="{{.Permalink}}">{{.Title}}</a>
+  {{ end }}
+</section>
+<section class="categories">
+  {{range ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
+  <a href="{{.Permalink}}">{{.Title}}</a></li>
+  {{end}}
+</section>
+<section class="tags">
+  {{range ($.Site.GetPage "taxonomyTerm" "tags").Pages }}
+  <a href="{{.Permalink}}">{{.Title}}</a></li>
+  {{end}}
+</section>
 {{ partial "footer.html" . }}
