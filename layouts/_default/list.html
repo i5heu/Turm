@@ -11,7 +11,7 @@
                 </h2>
                 <time>{{ $el.Date.Format (.Site.Params.dateformPost | default "02.01.2006") }}</time>
             </div>
-            {{if ge (len $el.Content) 300}}
+            {{if ge (len $el.Content) 500}}
             <section class="article-content">
                 {{$el.Summary}} <a href="{{ .RelPermalink }}">---></a>
             </section>

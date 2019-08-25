@@ -1,2 +1,2 @@
 # Turm
-A simple thin Hugo Template!
+A simple thin Hugo Theme!

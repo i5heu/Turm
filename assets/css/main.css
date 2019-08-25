@@ -168,4 +168,12 @@ footer {
   margin-top: 2rem;
   padding-top: 1rem;
   border-top: 1px solid #eee;
+  display: flex;
+}
+footer>a {
+  margin: 0 0.5em;
+}
+footer>span.themeCredits{
+  margin-left: auto;
+  font-size: 0.8em;
 }
