@@ -2,7 +2,7 @@
 
 <section class="categories">
   {{ range .Params.categories }}
-  {{ $href := print (absURL "categories/") (urlize .) }}
+  {{ $href := print (relURL "categories/") (urlize .) }}
   <a href="{{ $href }}">{{ . }}</a>
   {{ end }}
 </section>
@@ -16,7 +16,7 @@
 </article>
 <section class="tags">
   {{ range .Params.tags }}
-  {{ $href := print (absURL "tags/") (urlize .) }}
+  {{ $href := print (relURL "tags/") (urlize .) }}
   <a href="{{ $href }}">{{ . }}</a>
   {{ end }}
 </section>
