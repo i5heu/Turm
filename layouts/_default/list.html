@@ -1,18 +1,28 @@
 {{ partial "header.html" . }}
 
-<h1>{{ .Title }}</h1>
-<div>
+<section class="overview">
+    <h1>{{ .Title }}</h1>
     <ul>
         {{ range $el := .Paginator.Pages }}
         <li>
-            <a href="{{ .RelPermalink }}">
-                {{ $el.Title | markdownify }}
-            </a>
-             || 
-            {{ $el.Date.Format (.Site.Params.dateformPost | default "02.01.2006") }}
+            <div class="meta">
+                <h2>
+                    <a href="{{ .RelPermalink }}">{{ $el.Title | markdownify }}</a>
+                </h2>
+                <time>{{ $el.Date.Format (.Site.Params.dateformPost | default "02.01.2006") }}</time>
+            </div>
+            {{if ge (len $el.Content) 300}}
+            <section class="article-content">
+                {{$el.Summary}} <a href="{{ .RelPermalink }}">---></a>
+            </section>
+            {{else}}
+            <section class="article-content">
+                {{$el.Content}}
+            </section>
+            {{end}}
         </li>
         {{ end }}
     </ul>
-</div>
+</section>
 
 {{ partial "footer.html" . }}

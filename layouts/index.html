@@ -1,18 +1,27 @@
 {{ partial "header.html" . }}
-<main>
+<section>
   {{.Content}}
-</main>
+</section>
 <section class="lastBlogPosts">
+    Last MicroBlog Posts:
+    {{ range first 5 ( where .Data.Pages "Section" "micro") }}
+    <a href="{{.Permalink}}">{{.Title}}</a>
+    {{ end }}
+  </section>
+<section class="lastBlogPosts">
+  Last Blog Posts:
   {{ range first 5 ( where .Data.Pages "Section" "posts") }}
   <a href="{{.Permalink}}">{{.Title}}</a>
   {{ end }}
 </section>
 <section class="categories">
+  Categories:<br>
   {{range ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
   <a href="{{.Permalink}}">{{.Title}}</a></li>
   {{end}}
 </section>
 <section class="tags">
+  Tags:<br>
   {{range ($.Site.GetPage "taxonomyTerm" "tags").Pages }}
   <a href="{{.Permalink}}">{{.Title}}</a></li>
   {{end}}

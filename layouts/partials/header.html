@@ -8,24 +8,25 @@
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
     <title>{{.Title}}</title>
-    <link rel="stylesheet" href="/css/main.css">
+
+    {{ with resources.Get "css/main.css" | minify }}
+    <style>{{ .Content | safeCSS }}</style>
+    {{ end }}
 </head>
 
 <body>
     <header>
-        <a href="{{ .Site.BaseURL | relLangURL }}">{{- .Site.Title -}}</a>
-        <hr>
-
-
-        <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-
-        {{- range .Site.Menus.main -}}
-        <a href="{{ .URL }}">{{- .Name -}}</a>
-        {{ end }}
-
-        {{ with .OutputFormats.Get "rss" -}}
-        {{ printf `<a href="%s" title="RSS" />RSS</a>` .Permalink | safeHTML }}
-        {{ end -}}
-        <hr>
+        <a class="title" href="{{ .Site.BaseURL | relLangURL }}">{{- .Site.Title -}}</a>
+        <nav>
+            <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+    
+            {{- range .Site.Menus.main -}}
+            <a href="{{ .URL }}">{{- .Name -}}</a>
+            {{ end }}
+    
+            {{ with .OutputFormats.Get "rss" -}}
+            {{ printf `<a href="%s" title="RSS" class="rssLink" /></a>` .Permalink | safeHTML }}
+            {{ end -}}
+        </nav>
     </header>
     <main>
