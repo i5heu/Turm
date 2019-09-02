@@ -3,6 +3,7 @@
   font-style: normal;
   font-weight: 400;
   src: url(https://cloudflare-ipfs.com/ipfs/QmYWo7wa5dWWHc7WhbZ458dVkV3h9E3cQ3ChkHePQTuaF9/WOFF2/Vollkorn-Regular.woff2) format("woff2"), url(https://gateway.pinata.cloud/ipfs/QmYWo7wa5dWWHc7WhbZ458dVkV3h9E3cQ3ChkHePQTuaF9/WOFF2/Vollkorn-Regular.woff2) format("woff2"), url(https://ipfs.io/ipfs/QmYWo7wa5dWWHc7WhbZ458dVkV3h9E3cQ3ChkHePQTuaF9/WOFF2/Vollkorn-Regular.woff2) format("woff2");
+  font-display: swap;
 }
 
 html {
