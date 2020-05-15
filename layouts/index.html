@@ -4,13 +4,13 @@
 </section>
 <section class="lastBlogPosts">
     Last MicroBlog Posts:
-    {{ range first 5 ( where .Data.Pages "Section" "micro") }}
+    {{ range first 5 ( where .Pages "Section" "==" "micro") }}
     <a href="{{.RelPermalink}}">{{.Title}}</a>
     {{ end }}
   </section>
 <section class="lastBlogPosts">
   Last Blog Posts:
-  {{ range first 5 ( where .Data.Pages "Section" "posts") }}
+  {{ range first 5 ( where .Pages "Section" "posts") }}
   <a href="{{.RelPermalink}}">{{.Title}}</a>
   {{ end }}
 </section>

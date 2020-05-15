@@ -1,15 +1,7 @@
-@font-face {
-  font-family: 'Vollkorn';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://cloudflare-ipfs.com/ipfs/QmYWo7wa5dWWHc7WhbZ458dVkV3h9E3cQ3ChkHePQTuaF9/WOFF2/Vollkorn-Regular.woff2) format("woff2"), url(https://gateway.pinata.cloud/ipfs/QmYWo7wa5dWWHc7WhbZ458dVkV3h9E3cQ3ChkHePQTuaF9/WOFF2/Vollkorn-Regular.woff2) format("woff2"), url(https://ipfs.io/ipfs/QmYWo7wa5dWWHc7WhbZ458dVkV3h9E3cQ3ChkHePQTuaF9/WOFF2/Vollkorn-Regular.woff2) format("woff2");
-  font-display: swap;
-}
-
 html {
   background: #003c3c;
   font-family: monospace;
-  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  font-size: calc(15px + 5%);
 }
 
 @media only screen and (max-width: 40rem) {
@@ -21,10 +13,10 @@ html {
 body {
   background: #fff;
   max-width: 42rem;
-  margin: 2rem auto 0 auto;
-  padding: 0 1rem;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
   padding-bottom: 1rem;
-  border-radius: 0.1rem;
+  border-radius: 0.4rem;
 }
 
 @media only screen and (max-width: 40rem) {
@@ -42,7 +34,7 @@ header {
 
 header .title {
   display: blocK;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   margin: 1rem auto;
   text-decoration: none;
   color: #000;
@@ -51,6 +43,7 @@ header .title {
 header>nav {
   font-size: 1.15rem;
   display: flex;
+  flex-wrap: wrap;
 }
 
 header>nav>a {
@@ -73,7 +66,8 @@ header>nav>.rssLink {
 }
 
 article {
-  font-family: Vollkorn;
+  font-family: Georgia,Times,Times New Roman,serif;
+  font-size: 130%;
   margin: 2rem 0;
 }
 
@@ -100,6 +94,10 @@ pre {
   overflow-y: auto;
   padding: 1em;
   border-radius: 0.2rem;
+}
+
+ul { 
+  padding-left: 2rem;
 }
 
 section.singleMeta {
@@ -144,6 +142,7 @@ section.lastBlogPosts>a {
 section.article-content {
   border: 1px solid #eee;
   padding: 1em;
+  line-height: 1.2rem;
 }
 
 section.overview div.meta {
